@@ -2,7 +2,7 @@ micronaut:
   application:
     name: tame-api
   dataSource:
-    url: jdbc:mysql://localhost:3306/test_micronaut
+    url: jdbc:mysql://localhost:3306/tame_db
     pooled: true
     driverClassName: com.mysql.cj.jdbc.Driver
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect

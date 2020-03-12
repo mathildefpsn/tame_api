@@ -49,19 +49,6 @@ dependencies {
 
     compile('org.projectlombok:lombok:1.18.4')
     annotationProcessor('org.projectlombok:lombok:1.18.4')
-
-    annotationProcessor("io.micronaut.spring:micronaut-spring-annotation")
-    annotationProcessor("io.micronaut.spring:micronaut-spring-boot-annotation")
-    annotationProcessor("io.micronaut.spring:micronaut-spring-web-annotation")
-    annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
-    annotationProcessor("io.micronaut.spring:micronaut-spring-boot")
-    testAnnotationProcessor "io.micronaut.spring:micronaut-spring-web-annotation"
-
-    compile 'org.springframework:org.springframework.jdbc:3.2.2.RELEASE'
-    compile "io.micronaut:micronaut-spring"
-
-    runtime('org.springframework:spring-jdbc')
-    runtime("io.micronaut.spring:micronaut-spring-boot")
 }
 
 test.classpath += configurations.developmentOnly
