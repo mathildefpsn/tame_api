@@ -19,6 +19,7 @@ configurations {
     developmentOnly 
 }
 
+
 dependencies {
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     annotationProcessor "io.micronaut:micronaut-inject-java"
@@ -36,6 +37,31 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testImplementation "io.micronaut.test:micronaut-test-junit5"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+
+    annotationProcessor 'io.micronaut.data:micronaut-data-processor:1.0.0'
+
+    compile "io.micronaut.configuration:micronaut-hibernate-validator"
+    compile "io.micronaut.configuration:micronaut-hibernate-gorm"
+    compile "io.micronaut.configuration:micronaut-hibernate-jpa"
+
+    runtime 'io.micronaut.configuration:micronaut-jdbc-tomcat'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.47'
+
+    compile('org.projectlombok:lombok:1.18.4')
+    annotationProcessor('org.projectlombok:lombok:1.18.4')
+
+    annotationProcessor("io.micronaut.spring:micronaut-spring-annotation")
+    annotationProcessor("io.micronaut.spring:micronaut-spring-boot-annotation")
+    annotationProcessor("io.micronaut.spring:micronaut-spring-web-annotation")
+    annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
+    annotationProcessor("io.micronaut.spring:micronaut-spring-boot")
+    testAnnotationProcessor "io.micronaut.spring:micronaut-spring-web-annotation"
+
+    compile 'org.springframework:org.springframework.jdbc:3.2.2.RELEASE'
+    compile "io.micronaut:micronaut-spring"
+
+    runtime('org.springframework:spring-jdbc')
+    runtime("io.micronaut.spring:micronaut-spring-boot")
 }
 
 test.classpath += configurations.developmentOnly
