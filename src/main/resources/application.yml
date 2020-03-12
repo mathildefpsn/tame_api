@@ -1,10 +1,21 @@
 micronaut:
   application:
     name: tame-api
-  dataSource:
-    url: jdbc:mysql://localhost:3306/tame_db
-    pooled: true
-    driverClassName: com.mysql.cj.jdbc.Driver
-    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    username: ${JDBC_USER:"user"}
-    password: ${JDBC_PASSWORD:"password"}
+
+  environments:
+    dev:
+      dataSource:
+        url: jdbc:mysql://localhost:3306/tame_db
+        pooled: true
+        driverClassName: com.mysql.cj.jdbc.Driver
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        username: ${JDBC_USER:"user"}
+        password: ${JDBC_PASSWORD:"password"}
+    test:
+      dataSource:
+        url: jdbc:mysql://localhost:3306/tame_test_db
+        pooled: true
+        driverClassName: com.mysql.cj.jdbc.Driver
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        username: ${JDBC_USER:"user"}
+        password: ${JDBC_PASSWORD:"password"}
