@@ -1,4 +1,4 @@
 package tame.api.users.DTOs;
 
-public class UserDto {
+public class UserDtoIn {
 }
