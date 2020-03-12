@@ -1,6 +1,8 @@
 package tame.api.users.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -8,10 +10,12 @@ import java.util.Date;
 @Entity
 @Table(name = "users")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(name = "email", nullable = false)
     private String email;
@@ -57,7 +61,5 @@ public class User {
 
     @Column(name = "city", nullable = false)
     private String city;
-
-
 
 }
